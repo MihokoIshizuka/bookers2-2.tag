@@ -1,13 +1,18 @@
-<table>
-  <%= form_with model: user do |f| %>
-  <tr><%= image.tag user.get_image, size:"100x100", fallback:"no_image.jpg" %></tr>
+<table class="table">
+  <tr><%= image_tag user.get_profile_image, size:"100x100", fallback:"no_image.jpg" %></tr>
   <tr>
-    <h3>name</h3>
-    <%= user.name %>
+    <th>Name</th>
+    <th><%= user.name %></th>
   </tr>
   <tr>
-    <h3>introduction</h3>
-    <%= user.introduction %>
+    <th>Introduction</th>
+    <th><%= user.introduction %></th>
   </tr>
-  <% end %>
 </table>
+
+<div class="row">
+  <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
+  <i class="fas fa-user-cog"></i>
+  <% end %>
+</div>
+  

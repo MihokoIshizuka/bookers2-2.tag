@@ -8,7 +8,7 @@
   <tr>
     <td>
       <% link_to book_path(book) do %>
-      <%= image.tag book.user.get_image, size:"50x50", fallback:"no_image.jpg" %>
+      <%= image_tag book.user.get_profile_image, size:"50x50", fallback:"no_image.jpg" %>
       <% end %>
     </td>
     <td>
