@@ -1,7 +1,6 @@
 <table>
-  <h1>User Info</h1>
   <%= form_with model: user do |f| %>
-  <tr><%= image.tag get_image, size:"100x100", fallback:"no_image.jpg" %></tr>
+  <tr><%= image.tag user.get_image, size:"100x100", fallback:"no_image.jpg" %></tr>
   <tr>
     <h3>name</h3>
     <%= user.name %>
@@ -10,4 +9,5 @@
     <h3>introduction</h3>
     <%= user.introduction %>
   </tr>
+  <% end %>
 </table>
