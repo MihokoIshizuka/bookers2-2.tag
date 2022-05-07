@@ -1,0 +1,6 @@
+<%= form_with model: book do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Opinion</h4>
+  <%= f.text_area :body %>
+  <%= f.submit edit:"Update Book", index:"Create Book", class: "btn btn-sm btn-primary" %>

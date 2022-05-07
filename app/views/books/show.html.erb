@@ -1,0 +1,19 @@
+<tr>
+  <th></th>
+  <th>Title</th>
+  <th>Opinion</th>
+  <th colspan="3"></th>
+</tr>
+<tr>
+  <td>
+    <% link_to @book.user_path do %>
+    <%= image.tag @book.user.get_image, size:"50x50", fallback:"no_image.jpg" %>
+    <%= @book.user.name %>
+    <% end %>
+  </td>
+  <td><%= book.title %></td>
+  <td><%= book.body %></td>
+  <% if @book.user == current_user %>
+  <td><%= link_to "Edit", edit_book_path(@book), class: "btn btn-sm btn-success" %></td>
+  <td><%= link_to "Destroy", book_path(@book), method: :delete, class: "btn btn-sm btn-success" %></td>
+</tr>
