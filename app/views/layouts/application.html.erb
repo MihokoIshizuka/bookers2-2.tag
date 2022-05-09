@@ -22,18 +22,18 @@
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to root_path do %>
+            <%= link_to user_path(current_user.id) do %>
               <i class="fas fa-home"></i>Home
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to users_path do %>
-              <i class="fas fa-user"></i>Users
+              <i class="fas fa-users"></i>Users
             <% end %>
           </li>
           <li class="nav-item">
             <%= link_to books_path do %>
-              <i class="fas fa-book"></i>Books
+              <i class="fas fa-book-open"></i>Books
             <% end %>
           </li>
           <li class="nav-item">
