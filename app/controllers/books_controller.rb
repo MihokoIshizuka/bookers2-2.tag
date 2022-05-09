@@ -25,12 +25,18 @@ class BooksController < ApplicationController
   end
 
   def update
-    @book = book.find(params[:id])
+    @book = Book.find(params[:id])
     if @book.update(book_params)
       redirect_to book_path(@book)
     else
       render request.referer
     end
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to user_path(@book.user_id)
   end
 
   private

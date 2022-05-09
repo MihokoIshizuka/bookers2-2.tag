@@ -1,6 +1,9 @@
-<table>
-  <h1>Editing Book</h1>
-  <%= render "form", book: @book %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Editing Book</h1>
+        <%= render "form", book: @book %><br>
 
-  <%=link_to "Show", book_path(@book) %> | <%= link_to "Back", books_path %>
-</table>
+        <%=link_to "Show", book_path(@book) %> | <%= link_to "Back", books_path %>
+    </div>
+  </div>
