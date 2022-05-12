@@ -47,7 +47,7 @@
             <% end %>
           </tr>
           <tr>
-            <%= render 'book_comments/comment', book: @book, book_comments: BookComment.all %>
+            <%= render 'book_comments/comment', book: @book %>
           </tr>
           <tr>
             <%= render 'book_comments/comment_form', book: @book, book_comment: @book_comment %>
