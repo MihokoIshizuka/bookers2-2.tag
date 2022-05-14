@@ -19,4 +19,4 @@ Turbolinks.start()
 ActiveStorage.start()
 
 //= require jquery
-//= require rails_ujs
+//= require rails-ujs
