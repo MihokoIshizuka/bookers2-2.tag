@@ -31,7 +31,7 @@
             <td id="favorite_buttons_<%= @book.id %>">
               <%= render 'favorites/favorites', book: @book %>
             </td>
-            <td id="book_comment_count_<%= @book.id %>">
+            <td id="book_comment_count">
               <%= render 'book_comments/comment_count', book: @book %>
             </td>
 
@@ -44,7 +44,7 @@
           <tr id="book_comments_area">
             <%= render 'book_comments/comment', book: @book %>
           </tr>
-          <tr id="book_comment_count">
+          <tr>
             <%= render 'book_comments/comment_form', book: @book, book_comment: @book_comment %>
           </tr>
         </tbody>
