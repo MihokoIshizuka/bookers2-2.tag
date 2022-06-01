@@ -2,7 +2,8 @@ class BooksController < ApplicationController
   before_action :correct_user, only: [:edit,:update]
 
   def index
-    @books = Book.all
+    @books = params[:tag_id].present? ? Tag.find(params[:tag_id]).books : Book.all
+    @books = @books.page(params[:page])
     @book = Book.new
   end
 
@@ -44,7 +45,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.require(:book).permit(:title, :body, tag_ids: [])
   end
 
   def correct_user
