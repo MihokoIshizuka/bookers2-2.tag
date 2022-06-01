@@ -8,7 +8,9 @@ class User < ApplicationRecord
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followings, through: :relationships, source: :followed
   has_many :followers, through: :reverse_of_relationships, source: :follower
-  
+  has_many :group_users
+  has_many :groups, through: :group_users
+
   validates :name, presence: true, uniqueness: true, length:{minimum:2, maximum:20}
   validates :introduction, length:{maximum:50}
   def get_profile_image
@@ -26,7 +28,7 @@ class User < ApplicationRecord
   def following?(user)
     followings.include?(user)
   end
-  
+
   def self.looks(search, word)
     if search == "perfect_match"
       @user = User.where("name LIKE?", "#{word}")
