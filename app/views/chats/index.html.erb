@@ -11,6 +11,9 @@
             <% end %>
           </td>
           <td><%= chat.message %></td>
+          <% if chat.image_url != nil %>
+            <td><%= image_tag chat.image_url %></td>
+          <% end %>
         </tr>
       </table>
       <% end %>
