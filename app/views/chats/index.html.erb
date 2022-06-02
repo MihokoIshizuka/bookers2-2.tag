@@ -5,7 +5,7 @@
       <table class="table">
         <tr>
           <td>
-            <%= link_to user_path(chat) do %>
+            <%= link_to user_path(chat.user_id) do %>
               <%= image_tag chat.user.get_profile_image, size:"30x30", fallback:"no_image.jpg" %>
               <%= chat.user.name %>
             <% end %>

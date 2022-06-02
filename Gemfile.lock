@@ -275,6 +275,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker
+  image_processing (~> 1.2)
   jbuilder (~> 2.7)
   jquery-rails
   kaminari (~> 1.2.1)
