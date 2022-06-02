@@ -25,6 +25,7 @@ before_action :correct_user, only: [:edit,:update]
       render :edit
     end
   end
+  
 
 
 
