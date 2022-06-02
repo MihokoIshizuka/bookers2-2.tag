@@ -9,9 +9,9 @@ class ChatsController < ApplicationController
   def create
     @chat = Chat.new(messages_params)
     if @chat.save
-      redirect_to 'index', notice: 'メッセージを作成しました'
+      redirect_to request.referer, notice: 'メッセージを作成しました'
     else
-      redirect_to 'index', notice: 'メッセージの作成に失敗しました'
+      redirect_to request.referer, notice: 'メッセージの作成に失敗しました'
     end
   end
 
