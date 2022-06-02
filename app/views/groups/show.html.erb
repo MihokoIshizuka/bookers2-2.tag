@@ -41,6 +41,9 @@
           </tr>
         </tbody>
       </table>
+      <% if @group.users.include?(current_user) %>
+        <%= link_to "Chat", group_chats_path(@group), class: "btn btn-outline-primary" %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <% @chats.each do |chat| %>
+      <table class="table">
+        <tr>
+          <td>
+            <%= link_to user_path(chat) do %>
+              <%= image_tag chat.user.get_profile_image, size:"30x30", fallback:"no_image.jpg" %>
+              <%= chat.user.name %>
+            <% end %>
+          </td>
+          <td><%= chat.message %></td>
+        </tr>
+      </table>
+      <% end %>
+      <div>
+        <%= form_with model: @chat do |f| %>
+          <div class="form-group">
+            <%= f.text_area :message, name: 'chat[message]' %>
+          </div>
+          <div class="form-group">
+            <%= f.file_field :image, class: 'form-control image', accept: 'image/*' %>
+          </div>
+          <div class="form-group">
+            <%= f.submit '投稿', class: 'btn btn-outline-success' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

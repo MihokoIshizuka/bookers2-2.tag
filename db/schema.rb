@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_01_133044) do
+ActiveRecord::Schema.define(version: 2022_06_02_022206) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 2022_06_01_133044) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "chats", force: :cascade do |t|
+    t.text "message"
+    t.string "image"
+    t.integer "user_id"
+    t.integer "group_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_chats_on_group_id"
+    t.index ["user_id"], name: "index_chats_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -129,6 +140,8 @@ ActiveRecord::Schema.define(version: 2022_06_01_133044) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "chats", "groups"
+  add_foreign_key "chats", "users"
   add_foreign_key "group_tags", "groups"
   add_foreign_key "group_tags", "tags"
   add_foreign_key "group_users", "groups"

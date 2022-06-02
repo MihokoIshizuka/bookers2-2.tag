@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :groups do
     get "join" => "groups#join"
     delete "all_destroy" => 'groups#all_destroy'
+    resources :chats, only: [:index, :create, :destroy]
   end
 
 end
